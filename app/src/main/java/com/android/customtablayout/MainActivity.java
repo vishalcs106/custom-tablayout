@@ -1,7 +1,6 @@
 package com.android.customtablayout;
 
 import android.animation.ArgbEvaluator;
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
@@ -18,23 +17,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    ViewPager viewPager;
-    TabLayout tabLayout;
-    Typeface font;
-    Integer direction = null;
-    final int DIRECTION_LEFT = 1;
-    final int DIRECTION_RIGHT = 2;
-    int currentTab = 0;
-    int nextTab = 0;
-    Float startingFrom = null;
-    Context context;
-    float selectedTab = 0;
+
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
+    private Typeface font;
+    private Integer direction = null;
+    private final int DIRECTION_LEFT = 1;
+    private final int DIRECTION_RIGHT = 2;
+    private int currentTab = 0;
+    private int nextTab = 0;
+    private float selectedTab = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        context = this;
     }
 
     private void initView() {
@@ -78,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if(positionOffset == 0.0){
-                    startingFrom = null;
                     direction = null;
                     selectedTab = position;
                 } else {
